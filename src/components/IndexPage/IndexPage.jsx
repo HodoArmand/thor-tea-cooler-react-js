@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
-import Layout from "../../common/Layout"
+import Layout from "../Layout/Layout"
 
 function IndexPage() {
+
+    const bodyTag = useRef(document.getElementsByTagName("body")[0]);
+
+    useEffect(() => {
+        bodyTag.current.className = "index-body";
+    }, []);
+
     return (
-        <Layout className='text-xl'>
+        <Layout>
             Index Page
         </Layout>
     )

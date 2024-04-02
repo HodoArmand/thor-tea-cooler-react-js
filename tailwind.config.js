@@ -4,7 +4,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,html}",
     // "./node_modules/flowbite/**/*.js",
-    // 'node_modules/preline/dist/*.js'
+    './node_modules/preline/preline.js',
   ],
   theme: {
     extend: {

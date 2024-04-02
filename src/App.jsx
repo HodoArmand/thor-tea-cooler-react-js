@@ -1,6 +1,10 @@
-import React from "react";
+import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import useReactPath from './common/useReactPath'
+
+import "preline/preline";
 
 import IndexPage from "./components/IndexPage/IndexPage"
 import LoginPage from "./components/LoginPage/LoginPage"
@@ -11,6 +15,12 @@ import ServerConfigurationPage from "./components/ServerConfigurationPage/Server
 
 
 const App = () => {
+
+    const path = useReactPath();
+    useEffect(() => {
+        window.HSStaticMethods.autoInit();
+    }, [path]);
+
     return (
         <BrowserRouter>
             <Routes>
