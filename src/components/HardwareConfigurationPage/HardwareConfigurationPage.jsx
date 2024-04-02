@@ -1,14 +1,10 @@
-import { useRef, useEffect } from 'react'
 
 import Layout from "../Layout/Layout"
+import useDarkMode from '../../common/useDarkMode'
 
 function HardwareConfigurationPage() {
 
-    const bodyTag = useRef(document.getElementsByTagName("body")[0]);
-
-    useEffect(() => {
-        bodyTag.current.className = "config-body";
-    }, []);
+    useDarkMode("config-body");
 
     return (
         <Layout>

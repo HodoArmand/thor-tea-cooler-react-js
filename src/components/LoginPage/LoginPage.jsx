@@ -1,13 +1,8 @@
-import { useRef, useEffect } from 'react'
-
+import useDarkMode from '../../common/useDarkMode'
 
 function LoginPage() {
 
-    const bodyTag = useRef(document.getElementsByTagName("body")[0]);
-
-    useEffect(() => {
-        bodyTag.current.className = "login-body";
-    }, []);
+    useDarkMode("login-body");
 
     return (
         <div>

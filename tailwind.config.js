@@ -1,9 +1,11 @@
+//  TODO: investigate if preline is even uzsed anywhere except the removed darkmdoe switcher
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   content: [
     "./src/**/*.{js,ts,jsx,tsx,html}",
-    // "./node_modules/flowbite/**/*.js",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
     './node_modules/preline/preline.js',
   ],
   theme: {
@@ -43,6 +45,7 @@ module.exports = {
   },
   plugins: [
     require('preline/plugin'),
+    require('flowbite/plugin'),
     require('autoprefixer'),
   ],
 }

@@ -1,14 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-
 import Layout from "../Layout/Layout"
+import useDarkMode from '../../common/useDarkMode'
 
 function IndexPage() {
 
-    const bodyTag = useRef(document.getElementsByTagName("body")[0]);
-
-    useEffect(() => {
-        bodyTag.current.className = "index-body";
-    }, []);
+    useDarkMode("index-body");
 
     return (
         <Layout>
