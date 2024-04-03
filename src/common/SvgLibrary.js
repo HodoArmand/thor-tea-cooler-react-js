@@ -6,6 +6,8 @@ import moon from './img/moon.svg'
 import sun from './img/sun.svg'
 
 import TtcLogo from './img/TTC_logo.svg'
+import TtcLogoFillcolor from './img/TTC_logo_fillcolor.svg'
+import github from './img/github.svg'
 
 import navMenuBars from './img/nav-menu-bars.svg'
 import navMenuOpened from './img/nav-menu-opened.svg'
@@ -17,6 +19,8 @@ const SvgLibrary = {
     moon,
     sun,
     TtcLogo,
+    TtcLogoFillcolor,
+    github,
     navMenuBars,
     navMenuOpened,
 };

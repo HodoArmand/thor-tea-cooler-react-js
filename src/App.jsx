@@ -87,6 +87,6 @@ const App = () => {
     )
 }
 
-const container = document.getElementById("root");
+const container = document.getElementsByTagName("body")[0];
 const root = createRoot(container);
 root.render(<App />);
