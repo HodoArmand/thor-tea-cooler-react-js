@@ -12,6 +12,9 @@ import github from './img/github.svg'
 import navMenuBars from './img/nav-menu-bars.svg'
 import navMenuOpened from './img/nav-menu-opened.svg'
 
+import loader from './img/loader.svg'
+import check from './img/check.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -23,6 +26,8 @@ const SvgLibrary = {
     github,
     navMenuBars,
     navMenuOpened,
+    loader,
+    check
 };
 
 export default SvgLibrary;

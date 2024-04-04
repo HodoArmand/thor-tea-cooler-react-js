@@ -1,13 +1,17 @@
-import React from 'react'
+import { useContext } from 'react'
+import AuthContext from '../../../common/AuthContext';
+
 
 import SvgLibrary from '../../../common/SvgLibrary'
 
-function handleLogout() {
-    console.log("logout");
-}
-
-//  TODO: add onClick="ttcClient.logout()" functionality
 function LogoutButton() {
+
+    const auth = useContext(AuthContext);
+
+    const handleLogout = () => {
+        auth.logout();
+    }
+
     return (
         <button className="nav-items-logout" onClick={handleLogout}>
             <img src={SvgLibrary.logout} className="injectable icon-md" alt="🚪" />

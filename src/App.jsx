@@ -14,6 +14,9 @@ import UserConfigurationPage from "./components/UserConfigurationPage/UserConfig
 import ServerConfigurationPage from "./components/ServerConfigurationPage/ServerConfigurationPage"
 
 import DarkModeContext from "./common/DarkModeContext"
+import { ApiProvider } from "./common/ApiContext";
+import { AuthProvider } from "./common/AuthContext";
+import ErrorBoundary from "./common/ErrorBoundary";
 
 const App = () => {
 
@@ -45,45 +48,83 @@ const App = () => {
     }
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={
-                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                        <IndexPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/index" element={
-                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                        <IndexPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/login" element={
-                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                        <LoginPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/configuration" element={
-                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                        <ConfigurationPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/userConfigurationPage" element={
-                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                        <UserConfigurationPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/hardwareConfigurationPage" element={
-                    <DarkModeContext.Provider value={darkMode}>
-                        <HardwareConfigurationPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-                <Route path="/serverConfigurationPage" element={
-                    <DarkModeContext.Provider value={darkMode}>
-                        <ServerConfigurationPage />
-                    </DarkModeContext.Provider>}>
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <ErrorBoundary>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <IndexPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+
+                    </Route>
+                    <Route path="/index" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <IndexPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                    <Route path="/login" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <LoginPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                    <Route path="/configuration" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <ConfigurationPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                    <Route path="/userConfigurationPage" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <UserConfigurationPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                    <Route path="/hardwareConfigurationPage" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <HardwareConfigurationPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                    <Route path="/serverConfigurationPage" element={
+                        <ApiProvider>
+                            <AuthProvider>
+                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                    <ServerConfigurationPage />
+                                </DarkModeContext.Provider>
+                            </AuthProvider>
+                        </ApiProvider>
+                    }>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </ErrorBoundary>
     )
 }
 

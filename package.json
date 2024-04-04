@@ -47,6 +47,7 @@
   "dependencies": {
     "@iconfu/svg-inject": "^1.2.3",
     "@tanstack/react-query": "^4.10.1",
+    "axios": "^1.6.8",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.8",
     "preline": "^2.0.3",

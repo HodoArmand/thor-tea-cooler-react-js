@@ -9,7 +9,6 @@ function Layout({ children }) {
 
     useEffect(() => {
         SVGInjectInstance(document.querySelectorAll("img.injectable"));
-        // console.log("SVGs injected");
     }
     );
 

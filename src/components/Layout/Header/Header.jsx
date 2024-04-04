@@ -9,6 +9,7 @@ import LogoutButton from './LogoutButton'
 import DarkModeToggle from './DarkModeToggle'
 
 function Header() {
+
     return (
         <header className="app-header">
             <nav className="w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
