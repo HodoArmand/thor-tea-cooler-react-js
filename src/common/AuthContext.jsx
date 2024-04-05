@@ -76,12 +76,26 @@ const AuthProvider = props => {
         };
 
         logout = () => {
-            return api.axios.post('logout')
+
+            return axios.post('logout')
                 .then(response => {
-                    return api.formatResponse(response);
+                    response = api.formatResponse(response);
+                    let fieldErrors = response.fieldErrors ? response.fieldErrors.join('\n') : 'none';
+                    if (response.statusCode === 201 && response.status === "ok") {
+                        this.setApiKey('unset');
+                        return true;
+                    }
+                    else {
+                        //  403 or 500
+                        console.log("-1- logout: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
+                        return false;
+                    }
                 })
                 .catch(error => {
-                    throw api.formatResponse(error);
+                    error = api.formatResponse(error);
+                    let fieldErrors = error.fieldErrors ? error.fieldErrors.join('\n') : 'none';
+                    console.log("-1- logout error: " + error.msg + '\nField Errors:\n' + fieldErrors);
+                    return false;
                 });
         };
 

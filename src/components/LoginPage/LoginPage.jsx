@@ -37,6 +37,7 @@ function LoginPage() {
         setIp(value);
     }
 
+    //  TODO: add modals for err msgs
     function handleTestIp() {
         setIpChanged(3);
         api.setTtcIp(ip);
@@ -62,6 +63,7 @@ function LoginPage() {
             });
     }
 
+    //  TODO: modal
     async function handleLogin() {
         const loggedIn = await auth.login(name, password);
         if (loggedIn) {
