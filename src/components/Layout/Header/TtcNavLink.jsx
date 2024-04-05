@@ -1,10 +1,19 @@
-import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom'
 
 function TtcNavLink({ link, text, icon, iconAlt }) {
 
+    const { pathname } = useLocation();
+    const [configIsActive, setConfigIsActive] = useState(false);
+
+    useEffect(() => {
+        setConfigIsActive(['/configuration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(pathname) &&
+            ['/configuration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(link));
+    }, []);
+
     return (
         <NavLink to={link} className={
-            ({ isActive }) => isActive ? "nav-items-active" : "nav-items"
+            ({ isActive }) => (isActive || configIsActive) ? "nav-items-active" : "nav-items"
         }
         >
             <img src={icon} className="injectable icon-md" alt={iconAlt} />
