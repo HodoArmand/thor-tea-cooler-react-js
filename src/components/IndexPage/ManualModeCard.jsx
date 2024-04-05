@@ -16,19 +16,20 @@ function ManualModeCard() {
     return (
         <div id="manualModeCard" className="teaControlGroupCard group">
             <div id="manualModeCardHeader" className="h-56 flex-none flex flex-row justify-center items-center bg-gray-50 dark:bg-slate-950 rounded-t-xl">
-                <span className={'' + !hardwareState.relay1 && '!hidden'}>
+                <span className={!hardwareState.relay1 ? '!hidden' : ''}>
                     <img id="relayStateIcon1On" src={SvgLibrary.propeller} alt="❊" className="injectable icon-6xl text-green-800 dark:text-green-400" />
                 </span>
-                <span className={'' + hardwareState.relay1 && '!hidden'}>
+                <span className={hardwareState.relay1 ? '!hidden' : ''}>
                     <img id="relayStateIcon1Off" src={SvgLibrary.propeller_off} alt="❊" className="injectable icon-6xl text-gray-700 dark:text-gray-400" />
                 </span>
-                <span className={'' + !hardwareState.relay2 && '!hidden'}>
+                <span className={!hardwareState.relay2 ? '!hidden' : ''
+                }>
                     <img id="relayStateIcon2On" src={SvgLibrary.propeller} alt="❊" className="injectable icon-6xl text-green-800 dark:text-green-400" />
-                </span>
-                <span className={'' + hardwareState.relay2 && '!hidden'}>
+                </span >
+                <span className={hardwareState.relay2 ? '!hidden' : ''}>
                     <img id="relayStateIcon2Off" src={SvgLibrary.propeller_off} alt="❊" className="injectable icon-6xl text-gray-700 dark:text-gray-400 " />
-                </span>
-            </div>
+                </span >
+            </div >
             <div id="manualModeCardMain" className="flex-auto flex flex-col justify-between p-4 md:p-6 space-y-2">
                 <h2 className="mb-1 text-base font-semibold uppercase text-green-600 dark:text-green-500">
                     Manual controls
@@ -54,24 +55,24 @@ function ManualModeCard() {
                 </div>
             </div>
             <div id="manualModeCardFooter" className="flex-none teaControlGroupCardFooter">
-                <button id="manualSwitchRelay1Button" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
+                <button id="manualSwitchRelay1Button" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
                     disabled={hardwareState.mode !== 'manual'}
                     onClick={() => { hardwareState.switchRelay(1) }}>
                     <span><img src={SvgLibrary.toggle} alt="⏻" className="injectable icon-md inline mr-1 rotate-90" />Fan #1</span>
                 </button>
-                <button id="manualSwitchRelay1ButtonLoader" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                <button id="manualSwitchRelay1ButtonLoader" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled >
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
-                </button>
-                <button id="manualSwitchRelay2Button" type="button" className={"card-button-right hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
+                </button >
+                <button id="manualSwitchRelay2Button" type="button" className={"card-button-right hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
                     disabled={hardwareState.mode !== 'manual'}
                     onClick={() => { hardwareState.switchRelay(2) }}>
                     <span><img src={SvgLibrary.toggle} alt="⏻" className="injectable icon-md inline mr-1 rotate-90" />Fan #2</span>
-                </button>
-                <button id="manualSwitchRelay2ButtonLoader" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                </button >
+                <button id="manualSwitchRelay2ButtonLoader" type="button" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled >
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
-                </button>
-            </div>
-        </div>
+                </button >
+            </div >
+        </div >
     )
 }
 

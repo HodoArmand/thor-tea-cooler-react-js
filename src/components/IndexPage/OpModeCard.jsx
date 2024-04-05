@@ -39,17 +39,17 @@ function OpModeCard() {
     return (
         <div id="opModesCard" className="teaControlGroupCard group">
             <div id="opModesCardHeader" className="h-56 flex-none flex flex-col justify-center items-center bg-gray-50 dark:bg-slate-950 rounded-t-xl">
-                <span className={hardwareState.mode !== 'manual' && 'hidden'}>
+                <span className={hardwareState.mode !== 'manual' ? 'hidden' : ''}>
                     <img id="modeIconManual" src={SvgLibrary.modes.manual} className="injectable mode-icon" alt="⚙" />
                 </span>
-                <span className={hardwareState.mode !== 'autoReady' && 'hidden'}>
+                <span className={hardwareState.mode !== 'autoReady' ? 'hidden' : ''}>
                     <img id="modeIconAutoReady" src={SvgLibrary.modes.autoReady} className="injectable mode-icon" alt="⚙" />
                 </span>
-                <span className={hardwareState.mode !== 'autoCooling' && 'hidden'}>
+                <span className={hardwareState.mode !== 'autoCooling' ? 'hidden' : ''}>
                     <img id="modeIconAutoCooling" src={SvgLibrary.modes.autoCooling} className="injectable mode-icon" alt="⚙" />
 
                 </span>
-                <span className={hardwareState.mode !== 'autoFinished' && 'hidden'}>
+                <span className={hardwareState.mode !== 'autoFinished' ? 'hidden' : ''}>
                     <img id="modeIconAutoFinished" src={SvgLibrary.modes.autoFinished} className="injectable mode-icon" alt="⚙" />
 
                 </span>
@@ -71,19 +71,19 @@ function OpModeCard() {
                     <div className="mt-2 w-full flex justify-center">
                         <div className="inline-flex rounded-md shadow-sm w-fit">
                             <button id="modeAutoStart" type="button" onClick={() => hardwareState.postMode('startAutoCooling')} disabled={hardwareState.mode !== 'autoReady'}
-                                className={"button-group-left-right hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}>
+                                className={"button-group-left-right hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}>
                                 <span><img src={SvgLibrary.start} className="injectable icon-md inline mr-1" alt="🡢" />Start</span>
                             </button>
                             <button id="modeAutoStartLoader" type="button"
-                                className={"button-group-left-right hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                                className={"button-group-left-right hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>
                                 <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                             </button>
                             <button id="modeAutoStopLoader" type="button"
-                                className={"button-group-left-right hover:bg-rose-200 dark:hover:bg-rose-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                                className={"button-group-left-right hover:bg-rose-200 dark:hover:bg-rose-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>
                                 <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                             </button>
                             <button id="modeAutoStop" type="button" onClick={() => hardwareState.postMode('stopAutoCooling')} disabled={hardwareState.mode !== 'autoCooling'}
-                                className={"button-group-left-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}>
+                                className={"button-group-left-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}>
                                 <span><img src={SvgLibrary.stop} className="injectable icon-md inline mr-1" alt="■" />Stop</span>
                             </button>
                         </div>
@@ -91,18 +91,18 @@ function OpModeCard() {
                 </div>
             </div>
             <div id="opModesCardFooter" className="flex-none teaControlGroupCardFooter">
-                <button id="modeButtonAuto" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
+                <button id="modeButtonAuto" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
                     onClick={() => hardwareState.postMode('setModeAuto')}>
                     <span><img src={SvgLibrary.modes.autoReady} className="injectable icon-md inline mr-1" alt="⚙" />Automatic</span>
                 </button>
-                <button id="modeButtonAutoLoader" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                <button id="modeButtonAutoLoader" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                 </button>
-                <button id="modeButtonManual" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
+                <button id="modeButtonManual" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
                     onClick={() => hardwareState.postMode('setModeManual')}>
                     <span><img src={SvgLibrary.modes.manual} className="injectable icon-md inline mr-1" alt="⚙" />Manual</span>
                 </button>
-                <button id="modeButtonManualLoader" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
+                <button id="modeButtonManualLoader" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                 </button>
             </div>
