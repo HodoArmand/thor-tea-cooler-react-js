@@ -76,7 +76,7 @@ const AuthProvider = props => {
         };
 
         logout = () => {
-
+            //  TODO: modal
             return axios.post('logout')
                 .then(response => {
                     response = api.formatResponse(response);
@@ -101,7 +101,9 @@ const AuthProvider = props => {
 
         constructor() {
             this.apiKey = localStorage.getItem("ttcApiKey") ?? "unset";
-
+            if (this.apiKey != "unset") {
+                axios.defaults.headers.common['Authorization'] = "Bearer " + this.apiKey;
+            }
             let storedUserName = localStorage.getItem("ttcUserName");
             this.userName = storedUserName ? storedUserName : "unset";
         }

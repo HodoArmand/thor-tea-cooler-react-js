@@ -17,6 +17,7 @@ import DarkModeContext from "./common/DarkModeContext"
 import { ApiProvider } from "./common/ApiContext";
 import { AuthProvider } from "./common/AuthContext";
 import ErrorBoundary from "./common/ErrorBoundary";
+import { HardwareStateProvider } from "./components/IndexPage/HardwareStateContext";
 
 const App = () => {
 
@@ -55,7 +56,9 @@ const App = () => {
                         <ApiProvider>
                             <AuthProvider>
                                 <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <IndexPage />
+                                    <HardwareStateProvider>
+                                        <IndexPage />
+                                    </HardwareStateProvider>
                                 </DarkModeContext.Provider>
                             </AuthProvider>
                         </ApiProvider>
@@ -66,7 +69,9 @@ const App = () => {
                         <ApiProvider>
                             <AuthProvider>
                                 <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <IndexPage />
+                                    <HardwareStateProvider>
+                                        <IndexPage />
+                                    </HardwareStateProvider>
                                 </DarkModeContext.Provider>
                             </AuthProvider>
                         </ApiProvider>

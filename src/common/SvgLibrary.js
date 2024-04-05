@@ -15,6 +15,18 @@ import navMenuOpened from './img/nav-menu-opened.svg'
 import loader from './img/loader.svg'
 import check from './img/check.svg'
 
+import autoCooling from './img/modes/autoCooling.svg'
+import autoFinished from './img/modes/autoFinished.svg'
+import autoReady from './img/modes/autoReady.svg'
+import manual from './img/modes/manual.svg'
+
+import start from './img/start.svg'
+import stop from './img/stop.svg'
+
+import propeller from './img/propeller.svg'
+import propeller_off from './img/propeller_off.svg'
+import toggle from './img/toggle.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -27,7 +39,18 @@ const SvgLibrary = {
     navMenuBars,
     navMenuOpened,
     loader,
-    check
+    check,
+    modes: {
+        autoCooling,
+        autoFinished,
+        autoReady,
+        manual,
+    },
+    start,
+    stop,
+    propeller,
+    propeller_off,
+    toggle,
 };
 
 export default SvgLibrary;
