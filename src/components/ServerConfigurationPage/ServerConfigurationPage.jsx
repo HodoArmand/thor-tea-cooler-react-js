@@ -1,4 +1,4 @@
-import Layout from "../Layout/Layout"
+import ConfigurationLayout from "../Layout/ConfigurationLayout"
 import useDarkMode from '../../common/useDarkMode'
 
 function ServerConfigurationPage() {
@@ -6,9 +6,9 @@ function ServerConfigurationPage() {
     useDarkMode("config-body");
 
     return (
-        <Layout>
+        <ConfigurationLayout>
             ServerConfigurationPage
-        </Layout>
+        </ConfigurationLayout>
     )
 }
 

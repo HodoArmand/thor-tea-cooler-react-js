@@ -27,6 +27,12 @@ import propeller from './img/propeller.svg'
 import propeller_off from './img/propeller_off.svg'
 import toggle from './img/toggle.svg'
 
+import user from './img/user.svg'
+import wifi from './img/wifi.svg'
+import cpu from './img/cpu.svg'
+import server from './img/server.svg'
+import chevronRight from './img/chevron-right.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -51,6 +57,11 @@ const SvgLibrary = {
     propeller,
     propeller_off,
     toggle,
+    user,
+    wifi,
+    cpu,
+    server,
+    chevronRight,
 };
 
 export default SvgLibrary;

@@ -1,5 +1,4 @@
-
-import Layout from "../Layout/Layout"
+import ConfigurationLayout from "../Layout/ConfigurationLayout"
 import useDarkMode from '../../common/useDarkMode'
 
 function HardwareConfigurationPage() {
@@ -7,9 +6,9 @@ function HardwareConfigurationPage() {
     useDarkMode("config-body");
 
     return (
-        <Layout>
+        <ConfigurationLayout>
             HW Config
-        </Layout>
+        </ConfigurationLayout>
     )
 }
 

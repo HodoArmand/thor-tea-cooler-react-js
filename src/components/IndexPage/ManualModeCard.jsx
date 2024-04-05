@@ -16,16 +16,16 @@ function ManualModeCard() {
     return (
         <div id="manualModeCard" className="teaControlGroupCard group">
             <div id="manualModeCardHeader" className="h-56 flex-none flex flex-row justify-center items-center bg-gray-50 dark:bg-slate-950 rounded-t-xl">
-                <span className={!hardwareState.relay1 && '!hidden'}>
+                <span className={'' + !hardwareState.relay1 && '!hidden'}>
                     <img id="relayStateIcon1On" src={SvgLibrary.propeller} alt="❊" className="injectable icon-6xl text-green-800 dark:text-green-400" />
                 </span>
-                <span className={hardwareState.relay1 && '!hidden'}>
+                <span className={'' + hardwareState.relay1 && '!hidden'}>
                     <img id="relayStateIcon1Off" src={SvgLibrary.propeller_off} alt="❊" className="injectable icon-6xl text-gray-700 dark:text-gray-400" />
                 </span>
-                <span className={!hardwareState.relay2 && '!hidden'}>
+                <span className={'' + !hardwareState.relay2 && '!hidden'}>
                     <img id="relayStateIcon2On" src={SvgLibrary.propeller} alt="❊" className="injectable icon-6xl text-green-800 dark:text-green-400" />
                 </span>
-                <span className={hardwareState.relay2 && '!hidden'}>
+                <span className={'' + hardwareState.relay2 && '!hidden'}>
                     <img id="relayStateIcon2Off" src={SvgLibrary.propeller_off} alt="❊" className="injectable icon-6xl text-gray-700 dark:text-gray-400 " />
                 </span>
             </div>
