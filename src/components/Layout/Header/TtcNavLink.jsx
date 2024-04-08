@@ -7,8 +7,8 @@ function TtcNavLink({ link, text, icon, iconAlt }) {
     const [configIsActive, setConfigIsActive] = useState(false);
 
     useEffect(() => {
-        setConfigIsActive(['/configuration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(pathname) &&
-            ['/configuration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(link));
+        setConfigIsActive(['/networkConfiguration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(pathname) &&
+            ['/networkConfiguration', '/hardwareConfiguration', '/serverConfiguration', '/userConfiguration'].includes(link));
     }, []);
 
     return (

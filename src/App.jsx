@@ -8,7 +8,7 @@ import "preline/preline";
 
 import IndexPage from "./components/IndexPage/IndexPage"
 import LoginPage from "./components/LoginPage/LoginPage"
-import ConfigurationPage from "./components/ConfigurationPage/ConfigurationPage"
+import NetworkConfigurationPage from "./components/NetworkConfigurationPage/NetworkConfigurationPage"
 import HardwareConfigurationPage from "./components/HardwareConfigurationPage/HardwareConfigurationPage"
 import UserConfigurationPage from "./components/UserConfigurationPage/UserConfigurationPage"
 import ServerConfigurationPage from "./components/ServerConfigurationPage/ServerConfigurationPage"
@@ -87,11 +87,11 @@ const App = () => {
                         </ApiProvider>
                     }>
                     </Route>
-                    <Route path="/configuration" element={
+                    <Route path="/networkConfiguration" element={
                         <ApiProvider>
                             <AuthProvider>
                                 <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <ConfigurationPage />
+                                    <NetworkConfigurationPage />
                                 </DarkModeContext.Provider>
                             </AuthProvider>
                         </ApiProvider>

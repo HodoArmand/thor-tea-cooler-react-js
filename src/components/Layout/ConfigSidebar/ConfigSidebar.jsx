@@ -11,7 +11,7 @@ function ConfigSidebar() {
     return (
         <aside id="configSidebar" className={isSideBarOpen ? 'w-64' : 'w-32'}>
             <ConfigNavLink link='/userConfiguration' text="User" icon={SvgLibrary.user} iconAlt="👥" isSideBarOpen={isSideBarOpen} />
-            <ConfigNavLink link='/configuration' text="Network" icon={SvgLibrary.wifi} iconAlt="🖧" isSideBarOpen={isSideBarOpen} />
+            <ConfigNavLink link='/networkConfiguration' text="Network" icon={SvgLibrary.wifi} iconAlt="🖧" isSideBarOpen={isSideBarOpen} />
             <ConfigNavLink link='/hardwareConfiguration' text="Hardware" icon={SvgLibrary.cpu} iconAlt="🖳" isSideBarOpen={isSideBarOpen} />
             <ConfigNavLink link='/serverConfiguration' text="Server" icon={SvgLibrary.server} iconAlt="☁" isSideBarOpen={isSideBarOpen} />
             <div id="configSideBarClose" className={"flex w-full pt-2 border-t-2 border-green-700/50 " + (!isSideBarOpen && '!hidden')}>

@@ -33,6 +33,11 @@ import cpu from './img/cpu.svg'
 import server from './img/server.svg'
 import chevronRight from './img/chevron-right.svg'
 
+import hierarchy from './img/hierarchy.svg'
+import bug from './img/bug.svg'
+import key from './img/key.svg'
+import floppy from './img/floppy.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -62,6 +67,10 @@ const SvgLibrary = {
     cpu,
     server,
     chevronRight,
+    hierarchy,
+    bug,
+    key,
+    floppy
 };
 
 export default SvgLibrary;

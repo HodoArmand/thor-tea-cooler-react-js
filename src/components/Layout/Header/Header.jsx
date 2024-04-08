@@ -30,7 +30,7 @@ function Header() {
                 <div id="navbar-image-and-text-1" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                     <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5 sm:pr-2">
                         <TtcNavLink link="/" text="Tea Cooler" icon={SvgLibrary.mug} iconAlt="☕" />
-                        <TtcNavLink link="/configuration" text="Configuration" icon={SvgLibrary.gear} iconAlt="⚙" />
+                        <TtcNavLink link="/networkConfiguration" text="Configuration" icon={SvgLibrary.gear} iconAlt="⚙" />
                         <LogoutButton />
                         <DarkModeToggle />
                     </div>

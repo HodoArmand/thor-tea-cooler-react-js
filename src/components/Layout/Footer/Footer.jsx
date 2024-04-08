@@ -20,7 +20,7 @@ function Footer() {
                             </Link>
                         </li>
                         <li className="inline-block relative pr-8">
-                            <Link className="inline-flex gap-x-2 hover:text-white hover:underline hover:underline-offset-4" to="/configuration">
+                            <Link className="inline-flex gap-x-2 hover:text-white hover:underline hover:underline-offset-4" to="/networkConfiguration">
                                 Configuration
                             </Link>
                         </li>
