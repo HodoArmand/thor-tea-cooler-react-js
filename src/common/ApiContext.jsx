@@ -37,6 +37,16 @@ class TtcApiInterface {
         }
     }
 
+    formatFieldErrorsToHtmlList(fieldErrors) {
+        return fieldErrors ? ('<ul>' +
+            fieldErrors.map(
+                (fieldError) => ('<li>' + fieldError + '</li>')
+            ).join('')
+            + '</ul>'
+        )
+            : '';
+    }
+
     async guard() {
         if (this.ttcIp === 'unset') { return false };
         let res;

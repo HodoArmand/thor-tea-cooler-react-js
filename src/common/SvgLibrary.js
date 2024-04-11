@@ -38,6 +38,10 @@ import bug from './img/bug.svg'
 import key from './img/key.svg'
 import floppy from './img/floppy.svg'
 
+import trashX from './img/trash-x.svg'
+import userPlus from './img/user-plus.svg'
+import infoSquare from './img/info-square.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -70,7 +74,10 @@ const SvgLibrary = {
     hierarchy,
     bug,
     key,
-    floppy
+    floppy,
+    trashX,
+    userPlus,
+    infoSquare
 };
 
 export default SvgLibrary;

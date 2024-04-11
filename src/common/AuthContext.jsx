@@ -17,7 +17,6 @@ const AuthProvider = props => {
 
         set userName(value) {
             this._userName = value;
-            localStorage.setItem("ttcUserName", value);
         }
 
         get apiKey() {
@@ -28,6 +27,10 @@ const AuthProvider = props => {
             this._apiKey = value;
         }
 
+        setName(value) {
+            this.userName = value;
+            localStorage.setItem("ttcUserName", value);
+        }
         setApiKey(value) {
             this._apiKey = value;
             localStorage.setItem("ttcApiKey", value);
@@ -58,7 +61,7 @@ const AuthProvider = props => {
                     response = api.formatResponse(response);
                     let fieldErrors = response.fieldErrors ? response.fieldErrors.join('\n') : 'none';
                     if (response.statusCode === 201 && response.status === "ok") {
-                        this._name = requestData.name;
+                        this.setName(name_)
                         this.setApiKey(response.msg);
                         return true;
                     }
@@ -76,12 +79,12 @@ const AuthProvider = props => {
         };
 
         logout = () => {
-            //  TODO: modal
             return axios.post('logout')
                 .then(response => {
                     response = api.formatResponse(response);
                     let fieldErrors = response.fieldErrors ? response.fieldErrors.join('\n') : 'none';
                     if (response.statusCode === 201 && response.status === "ok") {
+                        this.setName('unset');
                         this.setApiKey('unset');
                         return true;
                     }
@@ -92,9 +95,7 @@ const AuthProvider = props => {
                     }
                 })
                 .catch(error => {
-                    error = api.formatResponse(error);
-                    let fieldErrors = error.fieldErrors ? error.fieldErrors.join('\n') : 'none';
-                    console.log("-1- logout error: " + error.msg + '\nField Errors:\n' + fieldErrors);
+                    console.log("-1- logout: " + error);
                     return false;
                 });
         };

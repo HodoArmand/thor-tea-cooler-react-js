@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer"
 import ConfigSidebar from './ConfigSidebar/ConfigSidebar';
 
 import SVGInjectInstance from '@iconfu/svg-inject';
+import Modal from './../Layout/Modal/Modal'
 
 function ConfigurationLayout({ children }) {
 
@@ -23,6 +24,7 @@ function ConfigurationLayout({ children }) {
                 </section>
             </main>
             <Footer />
+            <Modal />
         </>
     )
 }

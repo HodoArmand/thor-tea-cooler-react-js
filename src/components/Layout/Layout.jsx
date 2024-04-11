@@ -4,6 +4,7 @@ import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
 
 import SVGInjectInstance from '@iconfu/svg-inject';
+import Modal from './Modal/Modal';
 
 function Layout({ children }) {
 
@@ -19,6 +20,7 @@ function Layout({ children }) {
                 {children}
             </main>
             <Footer />
+            <Modal />
         </>
     )
 }

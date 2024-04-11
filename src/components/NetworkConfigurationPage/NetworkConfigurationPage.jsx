@@ -7,6 +7,7 @@ import SvgLibrary from "../../common/SvgLibrary";
 import useAppGuard from "../../common/useAppGuard"
 import ApiContext from "../../common/ApiContext";
 import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContainerLoader";
+import ModalContext from "../Layout/Modal/ModalContext";
 
 
 function ConfigurationPage() {
@@ -15,6 +16,7 @@ function ConfigurationPage() {
     useAppGuard();
 
     const api = useContext(ApiContext);
+    const modal = useContext(ModalContext);
 
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => networkConfig.get(), []);
@@ -32,7 +34,6 @@ function ConfigurationPage() {
         setIp(value);
     }
 
-    //  TODO: add modals for err msgs
     function handleTestIp() {
         setIpChanged(3);
         setIsApiRequesting(true);
@@ -49,6 +50,9 @@ function ConfigurationPage() {
                     api.setTtcIp('unset');
                     setIpChanged(2);
                     console.log("-1- isTtc: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
+                    modal.setTitle('Error');
+                    modal.setDesc('TTC IP test failed: ' + response.msg + ' ' + fieldErrors);
+                    modal.setIsOpen(true);
                 }
             })
             .catch(error => {
@@ -56,6 +60,9 @@ function ConfigurationPage() {
                 api.ttcIp = 'unset';
                 setIpChanged(2);
                 console.log("-1- isTtc: " + error);
+                modal.setTitle('Error');
+                modal.setDesc('No TTC device found on this address.');
+                modal.setIsOpen(true);
             }).finally(() => {
                 setIsApiRequesting(false);
             });;
@@ -79,12 +86,18 @@ function ConfigurationPage() {
                     }
                     else {
                         console.log("-1- getNetworkConfig: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
+                        modal.setTitle('Error');
+                        modal.setDesc('Network configuration failed to load: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
+                        modal.setIsOpen(true);
                     }
                 })
                 .catch(error => {
                     error = api.formatResponse(error);
                     let fieldErrors = error.fieldErrors ? error.fieldErrors.join('\n') : 'none';
                     console.log("-1- getNetworkConfig error: " + error.msg + '\nField Errors:\n' + fieldErrors);
+                    modal.setTitle('Error');
+                    modal.setDesc('Network configuration failed to load: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
+                    modal.setIsOpen(true);
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });
@@ -102,15 +115,24 @@ function ConfigurationPage() {
                     let fieldErrors = response.fieldErrors ? response.fieldErrors.join('\n') : 'none';
                     if (response.statusCode === 201 && response.status === "ok") {
                         console.log("-0- setNetworkConfig: " + response.msg);
+                        modal.setTitle('Info');
+                        modal.setDesc('Network configuration successfully saved.');
+                        modal.setIsOpen(true);
                     }
                     else {
                         console.log("-1- setNetworkConfig: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
+                        modal.setTitle('Error');
+                        modal.setDesc('Network configuration failed to save: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
+                        modal.setIsOpen(true);
                     }
                 })
                 .catch(error => {
                     error = api.formatResponse(error);
                     let fieldErrors = error.fieldErrors ? error.fieldErrors.join('\n') : 'none';
                     console.log("-1- setNetworkConfig error: " + error.msg + '\nField Errors:\n' + fieldErrors);
+                    modal.setTitle('Error');
+                    modal.setDesc('Network configuration failed to save: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
+                    modal.setIsOpen(true);
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });

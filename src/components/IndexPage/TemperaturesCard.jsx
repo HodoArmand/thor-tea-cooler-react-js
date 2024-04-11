@@ -43,7 +43,6 @@ function TemperaturesCard() {
                         </div>
                     </div>
                 </div>
-                {/* TODO: Mozilla renders a blue bar in the middle of the input. Find and apply no style on teh default slider pseudeoclasses */}
                 <label htmlFor="targetTemperatureRangeSlider" className="sr-only">Set Target temperature</label>
                 <div className="grid grid-cols-1 gap-4 place-items-center lg:flex lg:flex-row lg:items-center space-x-2 py-2 mt-4">
                     <div className="w-full sm:w-4/5 md:w-4/5 flex flex-row justify-center lg:justify-between space-x-2">

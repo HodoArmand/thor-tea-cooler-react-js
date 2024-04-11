@@ -18,13 +18,15 @@ import { ApiProvider } from "./common/ApiContext";
 import { AuthProvider } from "./common/AuthContext";
 import ErrorBoundary from "./common/ErrorBoundary";
 import { HardwareStateProvider } from "./components/IndexPage/HardwareStateContext";
+import { ModalProvider } from "./components/Layout/Modal/ModalContext";
+import Modal from "./components/Layout/Modal/Modal";
 
 const App = () => {
 
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
-        setDarkMode(localStorage.getItem('ttcDarkMode'));
+        setDarkMode(localStorage.getItem('ttcDarkMode') === "true");
     }, []);
 
     useEffect(() => {
@@ -55,11 +57,13 @@ const App = () => {
                     <Route path="/" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <HardwareStateProvider>
-                                        <IndexPage />
-                                    </HardwareStateProvider>
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <HardwareStateProvider>
+                                            <IndexPage />
+                                        </HardwareStateProvider>
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -68,11 +72,13 @@ const App = () => {
                     <Route path="/index" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <HardwareStateProvider>
-                                        <IndexPage />
-                                    </HardwareStateProvider>
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <HardwareStateProvider>
+                                            <IndexPage />
+                                        </HardwareStateProvider>
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -80,9 +86,11 @@ const App = () => {
                     <Route path="/login" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <LoginPage />
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <LoginPage />
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -90,9 +98,11 @@ const App = () => {
                     <Route path="/networkConfiguration" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <NetworkConfigurationPage />
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <NetworkConfigurationPage />
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -100,9 +110,12 @@ const App = () => {
                     <Route path="/userConfiguration" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <UserConfigurationPage />
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <UserConfigurationPage />
+                                        <Modal />
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -110,9 +123,11 @@ const App = () => {
                     <Route path="/hardwareConfiguration" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <HardwareConfigurationPage />
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <HardwareConfigurationPage />
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -120,9 +135,11 @@ const App = () => {
                     <Route path="/serverConfiguration" element={
                         <ApiProvider>
                             <AuthProvider>
-                                <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
-                                    <ServerConfigurationPage />
-                                </DarkModeContext.Provider>
+                                <ModalProvider>
+                                    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, setDarkModeLight, setDarkModeDark }}>
+                                        <ServerConfigurationPage />
+                                    </DarkModeContext.Provider>
+                                </ModalProvider>
                             </AuthProvider>
                         </ApiProvider>
                     }>
@@ -133,6 +150,6 @@ const App = () => {
     )
 }
 
-const container = document.getElementsByTagName("body")[0];
+const container = document.getElementById("App");
 const root = createRoot(container);
 root.render(<App />);

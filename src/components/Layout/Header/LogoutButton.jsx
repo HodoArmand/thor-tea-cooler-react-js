@@ -4,13 +4,15 @@ import AuthContext from '../../../common/AuthContext';
 
 
 import SvgLibrary from '../../../common/SvgLibrary'
+import ModalContext from '../Modal/ModalContext';
 
 function LogoutButton() {
 
     const auth = useContext(AuthContext);
+    const modal = useContext(ModalContext)
     const navigate = useNavigate();
 
-    //  TODO: modal
+
     async function handleLogout() {
         const loggedOut = await auth.logout();
         if (loggedOut) {
@@ -18,6 +20,9 @@ function LogoutButton() {
         }
         else {
             console.log("Unsuccessful Logout.");
+            modal.setTitle('Error');
+            modal.setDesc('Unsuccessful Logout. This is likely due to a TTC device server error.');
+            modal.setIsOpen(true);
         }
     }
 

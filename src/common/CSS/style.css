@@ -296,14 +296,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .modalSection {
-    @apply w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto;
+    @apply w-full h-full fixed top-0 left-0 overflow-x-hidden overflow-y-auto bg-gray-700/75 dark:bg-gray-950/90;
 }
 
 .modalWrapper {
     @apply sm:max-w-lg sm:w-full h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center;
     @apply mt-0 m-3 sm:mx-auto;
     @apply ease-out transition-all;
-    @apply opacity-0 hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500;
+    @apply mt-7 opacity-100;
 }
 
 .modalCard {

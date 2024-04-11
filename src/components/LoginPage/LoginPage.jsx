@@ -12,12 +12,15 @@ import useDarkMode from '../../common/useDarkMode'
 import DarkModeToggle from '../../components/Layout/Header/DarkModeToggle'
 
 import SvgLibrary from '../../common/SvgLibrary';
+import ModalContext from '../Layout/Modal/ModalContext';
+import Modal from './../Layout/Modal/Modal'
 
 function LoginPage() {
 
     useDarkMode("login-body");
 
     const navigate = useNavigate();
+    const modal = useContext(ModalContext);
 
     useEffect(() => {
         SVGInjectInstance(document.querySelectorAll("img.injectable"));
@@ -37,7 +40,6 @@ function LoginPage() {
         setIp(value);
     }
 
-    //  TODO: add modals for err msgs
     function handleTestIp() {
         setIpChanged(3);
         api.setTtcIp(ip);
@@ -53,17 +55,21 @@ function LoginPage() {
                     api.setTtcIp('unset');
                     setIpChanged(2);
                     console.log("-1- isTtc: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
+                    modal.setTitle('Error');
+                    modal.setDesc('TTC IP test failed: ' + response.msg + ' ' + fieldErrors);
+                    modal.setIsOpen(true);
                 }
             })
             .catch(error => {
-                error = error.message;
                 api.ttcIp = 'unset';
                 setIpChanged(2);
                 console.log("-1- isTtc: " + error);
+                modal.setTitle('Error');
+                modal.setDesc('No TTC device found on this address.');
+                modal.setIsOpen(true);
             });
     }
 
-    //  TODO: modal
     async function handleLogin() {
         const loggedIn = await auth.login(name, password);
         if (loggedIn) {
@@ -71,6 +77,9 @@ function LoginPage() {
         }
         else {
             console.log("Unsuccessful Login.");
+            modal.setTitle('Unsuccessful Login.');
+            modal.setDesc("Unsuccessful Login: The provided login credentials don't match any of our records.");
+            modal.setIsOpen(true);
         }
     }
 
@@ -128,6 +137,7 @@ function LoginPage() {
 
                 </form>
             </div >
+            <Modal />
         </main >
     )
 }

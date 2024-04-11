@@ -5,10 +5,12 @@ import DarkModeContext from '../common/DarkModeContext'
 const useDarkMode = (bodyClass) => {
     const { darkMode } = useContext(DarkModeContext);
 
-    const bodyTag = useRef(document.getElementsByTagName("body")[0]);
+    const appBodyTag = useRef(document.getElementById("App"));
+    const domBodyTag = useRef(document.getElementsByTagName("body")[0]);
 
     useEffect(() => {
-        bodyTag.current.className = `${bodyClass} ${darkMode ? 'dark' : ''}`;
+        domBodyTag.current.className = darkMode ? 'dark' : '';
+        appBodyTag.current.className = bodyClass;
     }, [darkMode]);
 
 }
