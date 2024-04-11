@@ -42,6 +42,11 @@ import trashX from './img/trash-x.svg'
 import userPlus from './img/user-plus.svg'
 import infoSquare from './img/info-square.svg'
 
+import temperature from './img/temperature.svg'
+import temperaturePlus from './img/temperature-plus.svg'
+import temperatureMinus from './img/temperature-minus.svg'
+import power from './img/power.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -77,7 +82,11 @@ const SvgLibrary = {
     floppy,
     trashX,
     userPlus,
-    infoSquare
+    infoSquare,
+    temperature,
+    temperaturePlus,
+    temperatureMinus,
+    power
 };
 
 export default SvgLibrary;

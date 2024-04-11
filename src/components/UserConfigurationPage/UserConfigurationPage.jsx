@@ -166,6 +166,7 @@ function UserConfigurationPage() {
                         <div className={(isApiRequesting ? '!hidden' : '') + " flex flew-row gap-2"}><img src={SvgLibrary.floppy} alt="💾" className="injectable icon-md" />Save</div>
                         <div className={isApiRequesting ? '' : '!hidden'}><img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." /></div>
                     </button>
+                    {/* TODO: add delete account founctionality */}
                     <h2 className="dark:text-gray-50">Delete Account</h2>
                     <div className="p-5 dark:text-gray-100">This action is permanent and restoring your account after deletion will not be possible!</div>
                     <button id="deleteUserConfirmButton" type="button" className="button-delete w-full sm:w-1/2 self-center !mt-5 disabled:control-disabled"

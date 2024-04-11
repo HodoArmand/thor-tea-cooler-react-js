@@ -47,6 +47,11 @@ class TtcApiInterface {
             : '';
     }
 
+    formatFloat(stringValue) {
+        let parsedValue = parseFloat(stringValue);
+        return parsedValue.toFixed(2);
+    }
+
     async guard() {
         if (this.ttcIp === 'unset') { return false };
         let res;

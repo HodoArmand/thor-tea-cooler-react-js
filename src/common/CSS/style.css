@@ -4,447 +4,522 @@
 
 /*Css vars*/
 :root {
-    /*vars for woodpattern bg*/
-    --red-wood-900: #7f1d1d0A;
-    --orange-wood-900: #7c2d120A;
-    --amber-wood-900: #78350f0A;
-    --yellow-wood-900: #713f120A;
-    --red-wood-950: #450a0a08;
-    --orange-wood-950: #43140708;
-    --amber-wood-950: #451a0308;
-    --yellow-wood-950: #42200608;
+	/*vars for woodpattern bg*/
+	--red-wood-900: #7f1d1d0a;
+	--orange-wood-900: #7c2d120a;
+	--amber-wood-900: #78350f0a;
+	--yellow-wood-900: #713f120a;
+	--red-wood-950: #450a0a08;
+	--orange-wood-950: #43140708;
+	--amber-wood-950: #451a0308;
+	--yellow-wood-950: #42200608;
 }
 
 .woodpattern {
-
-    background-color: #e2c7ae;
-    background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
-    background-image: -webkit-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -webkit-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -webkit-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -webkit-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -moz-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -moz-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -moz-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -moz-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -ms-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -ms-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -ms-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -ms-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -o-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -o-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -o-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -o-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-
+	background-color: #e2c7ae;
+	background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
+	background-image: -webkit-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-webkit-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-webkit-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-webkit-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -moz-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-moz-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-moz-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-moz-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -ms-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-ms-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-ms-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-ms-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -o-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-o-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-o-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-o-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
 }
 
 :is(.dark .dark\:woodpattern-dark) {
-
-    background-color: #3a342a;
-    background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
-    background-image: -webkit-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -webkit-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -webkit-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -webkit-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -moz-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -moz-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -moz-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -moz-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -ms-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -ms-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -ms-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -ms-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: -o-linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), -o-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), -o-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), -o-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
-    background-image: linear-gradient(0, var(--orange-wood-900) 50%, transparent 50%), linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%), linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%), linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-color: #3a342a;
+	background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
+	background-image: -webkit-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-webkit-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-webkit-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-webkit-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -moz-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-moz-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-moz-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-moz-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -ms-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-ms-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-ms-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-ms-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: -o-linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		-o-linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		-o-linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		-o-linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
+	background-image: linear-gradient(
+			0,
+			var(--orange-wood-900) 50%,
+			transparent 50%
+		),
+		linear-gradient(0, var(--amber-wood-900) 50%, transparent 50%),
+		linear-gradient(0, transparent 50%, var(--yellow-wood-950) 50%),
+		linear-gradient(0, transparent 50%, var(--amber-wood-950) 50%);
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
+html,
+body {
+	width: 100%;
+	height: 100%;
 }
 
 @layer utilities {
-    .bg-green-gradient-animated {
-        /*background: url('/img/greenshapes.svg'), linear-gradient(-45deg, #86efac, #f0fdf4, #86efac);*/
-        background: url('./../img/greenshapes.svg'), #f0fdf4; /* with bg-green-50*/
-        background-size: 100% 100%, 400% 400%;
-        animation: gradient 15s ease infinite;
-    }
+	.bg-green-gradient-animated {
+		/*background: url('/img/greenshapes.svg'), linear-gradient(-45deg, #86efac, #f0fdf4, #86efac);*/
+		background: url("./../img/greenshapes.svg"), #f0fdf4; /* with bg-green-50*/
+		background-size: 100% 100%, 400% 400%;
+		animation: gradient 15s ease infinite;
+	}
 
-    .bg-green-gradient-animated-dark {
-        /*background: url('/img/greenshapes-opacity.svg'), linear-gradient(-45deg, #020617, #052e16, #020617);*/
-        background: url('./../img/greenshapes-opacity.svg'), #052e16; /* with bg-green-950*/
-        background-size: 100% 100%, 400% 400%;
-        animation: gradient 15s ease infinite;
-    }
+	.bg-green-gradient-animated-dark {
+		/*background: url('/img/greenshapes-opacity.svg'), linear-gradient(-45deg, #020617, #052e16, #020617);*/
+		background: url("./../img/greenshapes-opacity.svg"), #052e16; /* with bg-green-950*/
+		background-size: 100% 100%, 400% 400%;
+		animation: gradient 15s ease infinite;
+	}
 
-    @keyframes gradient {
-        0% {
-            background-position: 0 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0 50%;
-        }
-    }
+	@keyframes gradient {
+		0% {
+			background-position: 0 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0 50%;
+		}
+	}
 }
 
 .nav-button {
-    @apply inline-flex justify-center items-center align-middle gap-2;
-    @apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
-    @apply rounded-md shadow-sm border dark:border-gray-700;
+	@apply inline-flex justify-center items-center align-middle gap-2;
+	@apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
+	@apply rounded-md shadow-sm border dark:border-gray-700;
 }
 
 .nav-items {
-    @apply flex flex-row space-x-2;
-    @apply pb-px;
-    @apply font-semibold text-gray-700 hover:text-emerald-700 dark:text-gray-200 dark:hover:text-emerald-500;
-    @apply sm:border-b-4 sm:border-transparent sm:hover:border-emerald-700 sm:dark:hover:border-emerald-500;
-
+	@apply flex flex-row space-x-2;
+	@apply pb-px;
+	@apply font-semibold text-gray-700 hover:text-emerald-700 dark:text-gray-200 dark:hover:text-emerald-500;
+	@apply sm:border-b-4 sm:border-transparent sm:hover:border-emerald-700 sm:dark:hover:border-emerald-500;
 }
 
 .nav-items-active {
-    @apply flex flex-row space-x-2;
-    @apply pb-px;
-    @apply font-semibold text-emerald-800 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-500;
-    @apply sm:border-b-4 sm:border-emerald-800 sm:hover:border-emerald-700 sm:dark:border-emerald-400 sm:dark:hover:border-emerald-500;
+	@apply flex flex-row space-x-2;
+	@apply pb-px;
+	@apply font-semibold text-emerald-800 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-500;
+	@apply sm:border-b-4 sm:border-emerald-800 sm:hover:border-emerald-700 sm:dark:border-emerald-400 sm:dark:hover:border-emerald-500;
 }
 
 .nav-items-logout {
-    @apply flex flex-row space-x-2;
-    @apply pb-px;
-    @apply font-semibold text-gray-700 hover:text-rose-700 dark:text-gray-200 dark:hover:text-rose-500;
-    @apply sm:border-b-4 sm:border-transparent sm:hover:border-rose-700 sm:dark:hover:border-rose-500;
+	@apply flex flex-row space-x-2;
+	@apply pb-px;
+	@apply font-semibold text-gray-700 hover:text-rose-700 dark:text-gray-200 dark:hover:text-rose-500;
+	@apply sm:border-b-4 sm:border-transparent sm:hover:border-rose-700 sm:dark:hover:border-rose-500;
 }
 
 .nav-text {
-    @apply font-semibold text-gray-700 hover:text-emerald-700 dark:text-gray-200 dark:hover:text-emerald-500;
+	@apply font-semibold text-gray-700 hover:text-emerald-700 dark:text-gray-200 dark:hover:text-emerald-500;
 }
 
 .icon-sm {
-    @apply w-4 h-4;
+	@apply w-4 h-4;
 }
 
 .icon-base {
-    @apply w-5 h-5;
+	@apply w-5 h-5;
 }
 
 .icon-md {
-    @apply w-6 h-6;
+	@apply w-6 h-6;
 }
 
 .icon-lg {
-    @apply w-7 h-7;
+	@apply w-7 h-7;
 }
 
 .icon-xl {
-    @apply w-8 h-8;
+	@apply w-8 h-8;
 }
 
 .icon-2xl {
-    @apply w-10 h-10;
+	@apply w-10 h-10;
 }
 
 .icon-3xl {
-    @apply w-12 h-12;
+	@apply w-12 h-12;
 }
 
 .icon-4xl {
-    @apply w-16 h-16;
+	@apply w-16 h-16;
 }
 
 .icon-5xl {
-    @apply h-28 w-28;
+	@apply h-28 w-28;
 }
 
 .icon-6xl {
-    @apply w-32 h-32;
+	@apply w-32 h-32;
 }
 
 .mode-icon {
-    @apply icon-6xl text-green-800 dark:text-green-400;
+	@apply icon-6xl text-green-800 dark:text-green-400;
 }
 
 .mode-title {
-    @apply text-xl font-semibold text-gray-800 dark:text-gray-300;
+	@apply text-xl font-semibold text-gray-800 dark:text-gray-300;
 }
 
 .mode-desc {
-    @apply mt-3 text-gray-500 dark:text-gray-400;
+	@apply mt-3 text-gray-500 dark:text-gray-400;
 }
 
 .card-button {
-    @apply w-full inline-flex justify-center items-center align-middle;
-    @apply py-3 px-4 sm:p-4 gap-2;
-    @apply text-sm font-medium text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white dark:bg-slate-900;
-    @apply shadow-sm dark:border-gray-700;
+	@apply w-full inline-flex justify-center items-center align-middle;
+	@apply py-3 px-4 sm:p-4 gap-2;
+	@apply text-sm font-medium text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white dark:bg-slate-900;
+	@apply shadow-sm dark:border-gray-700;
 }
 
 .card-button-right {
-    @apply card-button rounded-br-xl;
+	@apply card-button rounded-br-xl;
 }
 
 .card-button-left {
-    @apply card-button rounded-bl-xl;
+	@apply card-button rounded-bl-xl;
 }
 
 .card-button-full {
-    @apply card-button rounded-b-xl;
+	@apply card-button rounded-b-xl;
 }
 
 .button-group-left-right {
-    @apply inline-flex justify-center items-center align-middle;
-    @apply py-4 px-4 md:px-8 gap-2 -ml-px first:ml-0;
-    @apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white dark:bg-gray-800;
-    @apply first:rounded-l-lg last:rounded-r-lg border dark:border-gray-700;
+	@apply inline-flex justify-center items-center align-middle;
+	@apply py-4 px-4 md:px-8 gap-2 -ml-px first:ml-0;
+	@apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white dark:bg-gray-800;
+	@apply first:rounded-l-lg last:rounded-r-lg border dark:border-gray-700;
 }
 
 @layer components {
-    .control-disabled {
-        @apply disabled:saturate-0 disabled:opacity-30 disabled:cursor-not-allowed;
-    }
+	.control-disabled {
+		@apply disabled:saturate-0 disabled:opacity-30 disabled:cursor-not-allowed;
+	}
 }
 
 .button-set-temp {
-    @apply flex flex-row justify-center items-center align-middle;
-    @apply py-4 px-4 gap-2 -ml-px;
-    @apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white dark:bg-gray-800;
-    @apply rounded-lg border dark:border-gray-700;
+	@apply flex flex-row justify-center items-center align-middle;
+	@apply py-4 px-4 gap-2 -ml-px;
+	@apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white dark:bg-gray-800;
+	@apply rounded-lg border dark:border-gray-700;
 }
 
 .target-temp-slider {
-    @apply appearance-none cursor-pointer w-4/5 sm:w-full h-7;
-    @apply bg-gradient-to-r from-blue-300 to-red-500;
-    @apply rounded-lg;
+	@apply appearance-none cursor-pointer w-4/5 sm:w-full h-7;
+	@apply bg-gradient-to-r from-blue-300 to-red-500;
+	@apply rounded-lg;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    @apply appearance-none w-14 h-9;
-    @apply bg-white dark:bg-gray-800;
-    @apply rounded-lg border-2 border-solid border-gray-700/30 dark:border-gray-700;
+	-webkit-appearance: none;
+	@apply appearance-none w-14 h-9;
+	@apply bg-white dark:bg-gray-800;
+	@apply rounded-lg border-2 border-solid border-gray-700/30 dark:border-gray-700;
 }
 
 input[type="range"]::-moz-range-thumb {
-    -webkit-appearance: none;
-    @apply appearance-none w-14 h-9;
-    @apply bg-white dark:bg-gray-800;
-    @apply rounded-lg border-2 border-solid border-gray-700/30 dark:border-gray-700;
+	-webkit-appearance: none;
+	@apply appearance-none w-14 h-9;
+	@apply bg-white dark:bg-gray-800;
+	@apply rounded-lg border-2 border-solid border-gray-700/30 dark:border-gray-700;
 }
 
 .text-input {
-    @apply h-12 text-sm dark:text-gray-200;
-    @apply bg-emerald-50 dark:bg-emerald-700/60;
-    /*Autofill Background, but base tailwind utilities doesn't work, this inset shadow magic does the trick.*/
-    /*light:bg-emerald-50 dark:bg-emerald-700 -ish colors used*/
-    @apply autofill:shadow-[inset_0_0_0px_1000px_#ecfdf5] autofill:dark:shadow-[inset_0_0_0px_1000px_#047857FF];
-    @apply autofill:text-black autofill:dark:text-gray-200;
-    @apply rounded-md border border-gray-200 dark:border-gray-700;
+	@apply h-12 text-sm dark:text-gray-200;
+	@apply bg-emerald-50 dark:bg-emerald-700/60;
+	/*Autofill Background, but base tailwind utilities doesn't work, this inset shadow magic does the trick.*/
+	/*light:bg-emerald-50 dark:bg-emerald-700 -ish colors used*/
+	@apply autofill:shadow-[inset_0_0_0px_1000px_#ecfdf5] autofill:dark:shadow-[inset_0_0_0px_1000px_#047857FF];
+	@apply autofill:text-black autofill:dark:text-gray-200;
+	@apply rounded-md border border-gray-200 dark:border-gray-700;
 }
 
 .input-label-top {
-    @apply w-fit flex flex-row items-center justify-start;
-    @apply mb-2 text-sm text-gray-900 dark:text-gray-50;
+	@apply w-fit flex flex-row items-center justify-start;
+	@apply mb-2 text-sm text-gray-900 dark:text-gray-50;
 }
 
 .login-body {
-    @apply flex flex-row items-center min-h-screen w-full;
-    @apply m-0 p-0;
-    @apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
+	@apply flex flex-row items-center min-h-screen w-full;
+	@apply m-0 p-0;
+	@apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
 }
 
 .index-body {
-    @apply min-h-screen w-full flex flex-col;
-    @apply m-0 p-0;
-    @apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
+	@apply min-h-screen w-full flex flex-col;
+	@apply m-0 p-0;
+	@apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
 }
 
 .config-body {
-    @apply min-h-screen h-fit w-full flex flex-col justify-stretch;
-    @apply m-0 p-0;
-    @apply text-gray-800 dark:text-gray-300;
-    @apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
+	@apply min-h-screen h-fit w-full flex flex-col justify-stretch;
+	@apply m-0 p-0;
+	@apply text-gray-800 dark:text-gray-300;
+	@apply bg-green-50 dark:bg-green-950 sm:bg-green-gradient-animated dark:sm:bg-green-gradient-animated-dark;
 }
 
 .loginCard {
-    @apply w-full sm:w-7/12 md:w-6/12 lg:w-5/12 xl:w-3/12;
-    @apply flex flex-col items-center mx-auto mt-7 p-4 sm:p-7;
-    @apply bg-white dark:bg-gray-800;
-    @apply rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 dark:shadow-slate-700/70;
+	@apply w-full sm:w-7/12 md:w-6/12 lg:w-5/12 xl:w-3/12;
+	@apply flex flex-col items-center mx-auto mt-7 p-4 sm:p-7;
+	@apply bg-white dark:bg-gray-800;
+	@apply rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 dark:shadow-slate-700/70;
 }
 
 .button-ttcIp-test {
-    @apply w-full h-12 sm:w-2/6 inline-flex justify-center items-center;
-    @apply py-3 px-4 my-2 sm:mx-2 gap-2;
-    @apply font-semibold text-green-800 dark:text-white hover:text-white dark:hover:text-white;
-    @apply bg-white dark:bg-gray-500/25 hover:bg-green-600;
-    @apply rounded-lg border-2 border-green-600 dark:border dark:border-gray-300/25 dark:hover:bg-green-600;
+	@apply w-full h-12 sm:w-2/6 inline-flex justify-center items-center;
+	@apply py-3 px-4 my-2 sm:mx-2 gap-2;
+	@apply font-semibold text-green-800 dark:text-white hover:text-white dark:hover:text-white;
+	@apply bg-white dark:bg-gray-500/25 hover:bg-green-600;
+	@apply rounded-lg border-2 border-green-600 dark:border dark:border-gray-300/25 dark:hover:bg-green-600;
 }
 
 .button-login {
-    @apply inline-flex justify-center items-center;
-    @apply py-3 px-4 gap-2;
-    @apply font-semibold text-green-800 dark:text-white hover:text-white;
-    @apply bg-white dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
-    @apply rounded-md border-2 border-green-600 dark:border dark:border-gray-300/25;
+	@apply inline-flex justify-center items-center;
+	@apply py-3 px-4 gap-2;
+	@apply font-semibold text-green-800 dark:text-white hover:text-white;
+	@apply bg-white dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
+	@apply rounded-md border-2 border-green-600 dark:border dark:border-gray-300/25;
 }
 
 .button-save {
-    @apply flex flex-row justify-center items-center;
-    @apply py-3 px-4 gap-2;
-    @apply font-semibold text-green-800 dark:text-white hover:text-white;
-    @apply bg-white dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
-    @apply rounded-md border-2 border-green-600 dark:border dark:border-gray-300/25;
+	@apply flex flex-row justify-center items-center;
+	@apply py-3 px-4 gap-2;
+	@apply font-semibold text-green-800 dark:text-white hover:text-white;
+	@apply bg-white dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
+	@apply rounded-md border-2 border-green-600 dark:border dark:border-gray-300/25;
 }
 
 .button-delete {
-    @apply flex flex-row justify-center items-center;
-    @apply py-3 px-4 gap-2;
-    @apply font-semibold text-red-800 dark:text-white hover:text-white;
-    @apply bg-white dark:bg-gray-500/25 hover:bg-red-600 dark:hover:bg-red-600;
-    @apply rounded-md border-2 border-red-600 dark:border dark:border-gray-300/25;
+	@apply flex flex-row justify-center items-center;
+	@apply py-3 px-4 gap-2;
+	@apply font-semibold text-red-800 dark:text-white hover:text-white;
+	@apply bg-white dark:bg-gray-500/25 hover:bg-red-600 dark:hover:bg-red-600;
+	@apply rounded-md border-2 border-red-600 dark:border dark:border-gray-300/25;
 }
 
 .icon-loader {
-    @apply icon-md animate-spin text-green-600 dark:text-green-500;
+	@apply icon-md animate-spin text-green-600 dark:text-green-500;
 }
 
 .modalSection {
-    @apply w-full h-full fixed top-0 left-0 overflow-x-hidden overflow-y-auto bg-gray-700/75 dark:bg-gray-950/90;
+	@apply w-full h-full fixed top-0 left-0 overflow-x-hidden overflow-y-auto bg-gray-700/75 dark:bg-gray-950/90;
 }
 
 .modalWrapper {
-    @apply sm:max-w-lg sm:w-full h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center;
-    @apply mt-0 m-3 sm:mx-auto;
-    @apply ease-out transition-all;
-    @apply mt-7 opacity-100;
+	@apply sm:max-w-lg sm:w-full h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center;
+	@apply mt-0 m-3 sm:mx-auto;
+	@apply ease-out transition-all;
+	@apply mt-7 opacity-100;
 }
 
 .modalCard {
-    @apply max-h-full w-full overflow-hidden flex flex-col;
-    @apply bg-white dark:bg-gray-800;
-    @apply rounded-xl shadow-sm border dark:border-gray-700 dark:shadow-slate-700/70;
+	@apply max-h-full w-full overflow-hidden flex flex-col;
+	@apply bg-white dark:bg-gray-800;
+	@apply rounded-xl shadow-sm border dark:border-gray-700 dark:shadow-slate-700/70;
 }
 
 .modalHeader {
-    @apply flex justify-between items-center;
-    @apply py-3 px-4;
-    @apply border-b dark:border-gray-700;
+	@apply flex justify-between items-center;
+	@apply py-3 px-4;
+	@apply border-b dark:border-gray-700;
 }
 
 .modalButton {
-    @apply w-full h-full inline-flex justify-center items-center align-middle;
-    @apply py-3 px-4 gap-2;
-    @apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
-    @apply rounded-b-lg shadow-sm  border dark:border-gray-700;
+	@apply w-full h-full inline-flex justify-center items-center align-middle;
+	@apply py-3 px-4 gap-2;
+	@apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
+	@apply rounded-b-lg shadow-sm  border dark:border-gray-700;
 }
 
 .modalButtonHalfLeft {
-    @apply w-1/2 h-full inline-flex justify-center items-center align-middle;
-    @apply py-3 px-4 gap-2;
-    @apply text-sm font-medium text-red-700 dark:text-red-400 dark:hover:text-white;
-    @apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
-    @apply rounded-bl-lg shadow-sm  border dark:border-gray-700;
+	@apply w-1/2 h-full inline-flex justify-center items-center align-middle;
+	@apply py-3 px-4 gap-2;
+	@apply text-sm font-medium text-red-700 dark:text-red-400 dark:hover:text-white;
+	@apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
+	@apply rounded-bl-lg shadow-sm  border dark:border-gray-700;
 }
 
 .modalButtonHalfRight {
-    @apply w-1/2 h-full inline-flex justify-center items-center align-middle;
-    @apply py-3 px-4 gap-2;
-    @apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
-    @apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
-    @apply rounded-br-lg shadow-sm  border dark:border-gray-700;
+	@apply w-1/2 h-full inline-flex justify-center items-center align-middle;
+	@apply py-3 px-4 gap-2;
+	@apply text-sm font-medium text-gray-700 dark:text-gray-400 dark:hover:text-white;
+	@apply bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800;
+	@apply rounded-br-lg shadow-sm  border dark:border-gray-700;
 }
 
 .app-header {
-    @apply w-full flex flex-wrap sm:justify-start sm:flex-nowrap;
-    @apply z-40 py-4;
-    @apply text-base;
-    @apply woodpattern dark:woodpattern-dark;
-    @apply border-b border-green-600/50 dark:border-green-800/50;
+	@apply w-full flex flex-wrap sm:justify-start sm:flex-nowrap;
+	@apply z-40 py-4;
+	@apply text-base;
+	@apply woodpattern dark:woodpattern-dark;
+	@apply border-b border-green-600/50 dark:border-green-800/50;
 }
 
 .teaControlGroupCard {
-    @apply flex flex-col h-full bg-white border border-gray-300 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/70;
+	@apply flex flex-col h-full bg-white border border-gray-300 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/70;
 }
 
 .teaControlGroupCardFooter {
-    @apply mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-gray-700 dark:divide-gray-700;
+	@apply mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-gray-700 dark:divide-gray-700;
 }
 
 #configSidebar {
-    @apply flex flex-row justify-between sm:flex-col w-full sm:w-fit h-fit sm:h-full;
-    @apply p-2 sm:space-y-2 overflow-y-auto;
-    @apply backdrop-blur-sm bg-white/80 dark:bg-gray-900/80;
-    @apply sm:border-b sm:border-r dark:border-green-700/50;
+	@apply flex flex-row justify-between sm:flex-col w-full sm:w-fit h-fit sm:h-full;
+	@apply p-2 sm:space-y-2 overflow-y-auto;
+	@apply backdrop-blur-sm bg-white/80 dark:bg-gray-900/80;
+	@apply sm:border-b sm:border-r dark:border-green-700/50;
 }
 
 #configSidebar a {
-    @apply flex items-center h-fit;
-    @apply py-2;
-    @apply text-gray-700 dark:text-gray-200;
-    @apply hover:bg-emerald-100 dark:hover:bg-emerald-800;
-    @apply rounded-md;
+	@apply flex items-center h-fit;
+	@apply py-2;
+	@apply text-gray-700 dark:text-gray-200;
+	@apply hover:bg-emerald-100 dark:hover:bg-emerald-800;
+	@apply rounded-md;
 }
 
 #configSidebar a.active {
-    @apply flex items-center h-fit;
-    @apply py-2;
-    @apply text-gray-700 dark:text-gray-200;
-    @apply bg-emerald-100 dark:bg-emerald-800;
-    @apply rounded-md;
+	@apply flex items-center h-fit;
+	@apply py-2;
+	@apply text-gray-700 dark:text-gray-200;
+	@apply bg-emerald-100 dark:bg-emerald-800;
+	@apply rounded-md;
 }
 
 #configSidebar div button {
-    @apply flex items-center w-full h-fit;
-    @apply px-2 sm:px-4 py-2;
-    @apply text-gray-700 dark:text-gray-200;
-    @apply hover:bg-emerald-100 dark:hover:bg-emerald-800;
-    @apply rounded-md;
+	@apply flex items-center w-full h-fit;
+	@apply px-2 sm:px-4 py-2;
+	@apply text-gray-700 dark:text-gray-200;
+	@apply hover:bg-emerald-100 dark:hover:bg-emerald-800;
+	@apply rounded-md;
 }
 
 #configPageContentLayout h2 {
-    @apply font-semibold text-lg;
-    @apply border-b-2 border-green-400 dark:border-green-800/60;
+	@apply font-semibold text-lg;
+	@apply border-b-2 border-green-400 dark:border-green-800/60;
 }
 
 .toggleCheckbox {
-    /*The toggle button slider*/
-    @apply appearance-none w-[5.75rem] h-12;
-    @apply relative shrink-0;
-    @apply bg-gray-100 checked:bg-none checked:bg-green-500 dark:bg-gray-700 dark:checked:bg-emerald-700/60;
-    @apply rounded-lg border-2 border-gray-200/75 dark:border-gray-700;
-    @apply cursor-pointer transition-colors ease-in-out duration-200;
+	/*The toggle button slider*/
+	@apply appearance-none w-[5.75rem] h-12;
+	@apply relative shrink-0;
+	@apply bg-gray-100 checked:bg-none checked:bg-green-500 dark:bg-gray-700 dark:checked:bg-emerald-700/60;
+	@apply rounded-lg border-2 border-gray-200/75 dark:border-gray-700;
+	@apply cursor-pointer transition-colors ease-in-out duration-200;
 
-    /*The toggle button thumb*/
-    @apply before:inline-block before:w-11 before:h-11;
-    @apply before:bg-white checked:before:bg-white dark:before:bg-gray-400 dark:checked:before:bg-gray-400;
-    @apply before:shadow before:rounded-lg;
-    @apply before:transform before:translate-x-0 checked:before:translate-x-full before:transition before:ease-in-out before:duration-200;
+	/*The toggle button thumb*/
+	@apply before:inline-block before:w-11 before:h-11;
+	@apply before:bg-white checked:before:bg-white dark:before:bg-gray-400 dark:checked:before:bg-gray-400;
+	@apply before:shadow before:rounded-lg;
+	@apply before:transform before:translate-x-0 checked:before:translate-x-full before:transition before:ease-in-out before:duration-200;
 }
 
-
 /*Remove normal browser number input styling*/
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .custom-number-input input:focus {
-    outline: none !important;
+	outline: none !important;
 }
 
 .custom-number-input button:focus {
-    outline: none !important;
+	outline: none !important;
 }
 
 .numberInputField {
-    @apply w-full min-w-[5rem] h-12 flex items-center outline-none focus:outline-none;
-    @apply text-center text-base font-semibold text-gray-700 dark:text-gray-200;
-    @apply bg-emerald-50 dark:bg-emerald-700/60;
-    @apply border-y border-gray-200 dark:border-gray-700;
+	@apply w-full min-w-[5rem] h-12 flex items-center outline-none focus:outline-none;
+	@apply text-center text-base font-semibold text-gray-700 dark:text-gray-200;
+	@apply bg-emerald-50 dark:bg-emerald-700/60;
+	@apply border-y border-gray-200 dark:border-gray-700;
+}
+
+@layer base {
+	select[type="number"] {
+		appearance: textfield !important;
+		-webkit-appearance: textfield;
+		margin: 0;
+		-moz-appearance: textfield;
+	}
 }
 
 .numberInputButton {
-    @apply h-12 w-24 cursor-pointer outline-none flex flex-row items-center justify-center;
-    @apply text-xl font-bold text-gray-800 dark:text-gray-300 dark:hover:text-gray-50;
-    @apply bg-gray-50 dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
-    @apply border border-gray-200 dark:border-gray-700;
+	@apply h-12 w-24 cursor-pointer outline-none flex flex-row items-center justify-center;
+	@apply text-xl font-bold text-gray-800 dark:text-gray-300 dark:hover:text-gray-50;
+	@apply bg-gray-50 dark:bg-gray-500/25 hover:bg-green-600 dark:hover:bg-green-600;
+	@apply border border-gray-200 dark:border-gray-700;
 }
 
 .numberInputButton-r {
-    @apply numberInputButton rounded-r-md;
-    @apply hover:bg-green-200 dark:hover:bg-green-500/75;
+	@apply numberInputButton rounded-r-md;
+	@apply hover:bg-green-200 dark:hover:bg-green-500/75;
 }
 
 .numberInputButton-l {
-    @apply numberInputButton rounded-l-md;
-    @apply hover:bg-rose-200 dark:hover:bg-rose-500/75;
+	@apply numberInputButton rounded-l-md;
+	@apply hover:bg-rose-200 dark:hover:bg-rose-500/75;
 }
