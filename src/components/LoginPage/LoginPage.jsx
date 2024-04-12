@@ -60,6 +60,7 @@ function LoginPage() {
                     modal.setTitle('Error');
                     modal.setDesc('TTC IP test failed: ' + response.msg + ' ' + fieldErrors);
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }
             })
             .catch(error => {
@@ -69,6 +70,7 @@ function LoginPage() {
                 modal.setTitle('Error');
                 modal.setDesc('No TTC device found on this address.');
                 modal.setIsOpen(true);
+                modal.setType('info')
             });
     }
 
@@ -82,6 +84,7 @@ function LoginPage() {
             modal.setTitle('Unsuccessful Login.');
             modal.setDesc("Unsuccessful Login: The provided login credentials don't match any of our records.");
             modal.setIsOpen(true);
+            modal.setType('info')
         }
     }
 
@@ -95,7 +98,7 @@ function LoginPage() {
                 <div id="loginCardTitle" className="text-center">
                     <h1 className="block text-2xl font-bold text-green-800 dark:text-gray-50">Login</h1>
                 </div>
-                <form id="loginCardForm" className="block mt-5 w-full grid gap-y-4">
+                <form id="loginCardForm" className="mt-5 w-full grid gap-y-4">
                     <div id="input-group-ip" className="flex flex-col">
                         <label htmlFor="ttcIp" className="block input-label-top">TTC Address</label>
                         <div className="flex flex-col sm:flex-row sm:items-center">

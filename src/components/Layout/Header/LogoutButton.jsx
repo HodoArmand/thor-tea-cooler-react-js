@@ -23,6 +23,7 @@ function LogoutButton() {
             modal.setTitle('Error');
             modal.setDesc('Unsuccessful Logout. This is likely due to a TTC device server error.');
             modal.setIsOpen(true);
+            modal.setType('info')
         }
     }
 

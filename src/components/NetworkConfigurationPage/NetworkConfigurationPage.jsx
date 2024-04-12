@@ -10,6 +10,7 @@ import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContain
 import ModalContext from "../Layout/Modal/ModalContext";
 import StyledToggleInput from "../Layout/StyledToggleInput";
 import useTitle from '../../common/useTitle'
+import StyledTextInput from "../Layout/StyledTextInput";
 
 function ConfigurationPage() {
 
@@ -55,6 +56,7 @@ function ConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('TTC IP test failed: ' + response.msg + ' ' + fieldErrors);
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }
             })
             .catch(error => {
@@ -65,6 +67,7 @@ function ConfigurationPage() {
                 modal.setTitle('Error');
                 modal.setDesc('No TTC device found on this address.');
                 modal.setIsOpen(true);
+                modal.setType('info')
             }).finally(() => {
                 setIsApiRequesting(false);
             });;
@@ -91,6 +94,7 @@ function ConfigurationPage() {
                         modal.setTitle('Error');
                         modal.setDesc('Network configuration failed to load: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                 })
                 .catch(error => {
@@ -100,6 +104,7 @@ function ConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('Network configuration failed to load: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });
@@ -120,12 +125,14 @@ function ConfigurationPage() {
                         modal.setTitle('Info');
                         modal.setDesc('Network configuration successfully saved.');
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                     else {
                         console.log("-1- setNetworkConfig: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
                         modal.setTitle('Error');
                         modal.setDesc('Network configuration failed to save: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                 })
                 .catch(error => {
@@ -135,6 +142,7 @@ function ConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('Network configuration failed to save: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });
@@ -170,24 +178,8 @@ function ConfigurationPage() {
                     </div>
                     <h2 className="dark:text-gray-50">Device Network configuration</h2>
                     <StyledToggleInput imgSrc={SvgLibrary.bug} imgAlt='🐞' labelText='Debug mode' inputName='debugMode' setFormValue={setDebugMode} formValue={debugMode} />
-                    <div id="input-group-ssid">
-                        <label htmlFor="ssid" className="block input-label-top">
-                            <img src={SvgLibrary.wifi} alt="🖧" className="injectable inline-block icon-md mr-1" />
-                            <span>Network SSID</span>
-                        </label>
-                        <input type="text" id="ssid" name="ssid" minLength="1" maxLength="128" value={ssid} onInput={(e) => setSsid(e.target.value)}
-                            className="py-3 px-4 block w-full text-input" />
-                    </div>
-                    <div id="input-group-password">
-                        <div className="flex justify-between items-center">
-                            <label htmlFor="password" className="block input-label-top">
-                                <img src={SvgLibrary.key} alt="🔑" className="injectable inline-block icon-md mr-1" />
-                                <span>Network password</span>
-                            </label>
-                        </div>
-                        <input type="password" id="password" name="password" minLength="1" maxLength="128" value={password} onInput={(e) => setPassword(e.target.value)}
-                            className="py-3 px-4 block w-full text-input" />
-                    </div>
+                    <StyledTextInput imgSrc={SvgLibrary.wifi} imgAlt='🖧' labelText='Network SSID' inputName='ssid' formValue={ssid} setFormValue={setSsid} autoComplete={false} />
+                    <StyledTextInput imgSrc={SvgLibrary.key} imgAlt="🔑" labelText='Network password' inputName='password' formValue={password} setFormValue={setPassword} password={true} autoComplete={false} minLength='0' />
                     <button id="saveTtcNetworkConfigButton" type="button" onClick={() => networkConfig.set()} className={(isApiRequesting ? '!hidden' : '') + " button-save !mt-5 disabled:control-disabled"} disabled={ssid.length === 0 || password.length === 0}>
                         <img src={SvgLibrary.floppy} alt="💾" className="injectable icon-md" />
                         <span>Save</span>

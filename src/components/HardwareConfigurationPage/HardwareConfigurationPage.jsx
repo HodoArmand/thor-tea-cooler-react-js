@@ -56,6 +56,7 @@ function HardwareConfigurationPage() {
                         modal.setTitle('Error');
                         modal.setDesc('Hardware configuration failed to load: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                 })
                 .catch(error => {
@@ -65,6 +66,7 @@ function HardwareConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('Hardware configuration failed to load: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });
@@ -88,12 +90,14 @@ function HardwareConfigurationPage() {
                         modal.setTitle('Info');
                         modal.setDesc('Hardware configuration successfully saved.');
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                     else {
                         console.log("-1- setHardwareConfig: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
                         modal.setTitle('Error');
                         modal.setDesc('Hardware configuration failed to save: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                 })
                 .catch(error => {
@@ -103,6 +107,7 @@ function HardwareConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('Hardware configuration failed to save: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });
@@ -118,12 +123,14 @@ function HardwareConfigurationPage() {
                         modal.setTitle('Info');
                         modal.setDesc("Microcontroller is restarting in 10 seconds.");
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                     else {
                         console.log("-1- restartMcu: " + response.status + response.msg + '\nField Errors:\n' + fieldErrors);
                         modal.setTitle('Error');
                         modal.setDesc('Microcontroller restart failed: ' + response.msg + ' ' + api.formatFieldErrorsToHtmlList(response.fieldErrors));
                         modal.setIsOpen(true);
+                        modal.setType('info')
                     }
                 })
                 .catch(error => {
@@ -133,6 +140,7 @@ function HardwareConfigurationPage() {
                     modal.setTitle('Error');
                     modal.setDesc('Microcontroller restart failed: ' + error.msg + ' ' + api.formatFieldErrorsToHtmlList(error.fieldErrors));
                     modal.setIsOpen(true);
+                    modal.setType('info')
                 }).finally(() => {
                     setIsApiRequesting(false);
                 });

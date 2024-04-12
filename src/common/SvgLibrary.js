@@ -48,6 +48,7 @@ import temperatureMinus from './img/temperature-minus.svg'
 import power from './img/power.svg'
 
 import userGroup from './img/user-group.svg'
+import alertOctagon from './img/alert-octagon.svg'
 
 const SvgLibrary = {
     mug,
@@ -89,7 +90,8 @@ const SvgLibrary = {
     temperaturePlus,
     temperatureMinus,
     power,
-    userGroup
+    userGroup,
+    alertOctagon,
 };
 
 export default SvgLibrary;
