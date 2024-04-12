@@ -47,6 +47,8 @@ import temperaturePlus from './img/temperature-plus.svg'
 import temperatureMinus from './img/temperature-minus.svg'
 import power from './img/power.svg'
 
+import userGroup from './img/user-group.svg'
+
 const SvgLibrary = {
     mug,
     gear,
@@ -86,7 +88,8 @@ const SvgLibrary = {
     temperature,
     temperaturePlus,
     temperatureMinus,
-    power
+    power,
+    userGroup
 };
 
 export default SvgLibrary;

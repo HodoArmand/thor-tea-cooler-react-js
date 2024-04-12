@@ -8,6 +8,7 @@ import useAppGuard from "../../common/useAppGuard"
 import ApiContext from "../../common/ApiContext";
 import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContainerLoader";
 import ModalContext from "../Layout/Modal/ModalContext";
+import StyledToggleInput from "../Layout/StyledToggleInput";
 
 
 function ConfigurationPage() {
@@ -167,17 +168,7 @@ function ConfigurationPage() {
                         </div>
                     </div>
                     <h2 className="dark:text-gray-50">Device Network configuration</h2>
-                    <div id="input-group-debugMode">
-                        <label htmlFor="debugMode" className="block input-label-top">
-                            <img src={SvgLibrary.bug} alt="🐞" className="injectable inline-block icon-md mr-1" />
-                            <span>Debug mode</span>
-                        </label>
-                        <div className="flex items-center space-x-2">
-                            <label className="text-sm" htmlFor="debugMode">Off</label>
-                            <input type="checkbox" name="debugMode" id="debugMode" className="toggleCheckbox" onChange={() => setDebugMode(!debugMode)} checked={debugMode} />
-                            <label className="text-sm" htmlFor="debugMode">On</label>
-                        </div>
-                    </div>
+                    <StyledToggleInput imgSrc={SvgLibrary.bug} imgAlt='🐞' labelText='Debug mode' inputName='debugMode' setFormValue={setDebugMode} formValue={debugMode} />
                     <div id="input-group-ssid">
                         <label htmlFor="ssid" className="block input-label-top">
                             <img src={SvgLibrary.wifi} alt="🖧" className="injectable inline-block icon-md mr-1" />

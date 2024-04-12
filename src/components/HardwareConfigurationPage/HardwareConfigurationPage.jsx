@@ -9,6 +9,7 @@ import ApiContext from "../../common/ApiContext";
 import ModalContext from "../Layout/Modal/ModalContext";
 import StyledNumberInput from "../Layout/StyledNumberInput";
 import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContainerLoader";
+import StyledToggleInput from "../Layout/StyledToggleInput";
 
 function HardwareConfigurationPage() {
 
@@ -143,17 +144,7 @@ function HardwareConfigurationPage() {
                 <div id="configPageContentLayout" className="w-fit h-full flex flex-col space-y-2 pt-2">
                     <h2>Hardware configuration</h2>
                     <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 p-5">
-                        <div id="input-group-debugMode">
-                            <label htmlFor="debugMode" className="block input-label-top">
-                                <img src={SvgLibrary.bug} alt="🐞" className="injectable inline-block icon-md mr-1" />
-                                <span>Debug mode</span>
-                            </label>
-                            <div className="flex items-center space-x-2">
-                                <label className="text-sm" htmlFor="debugMode">Off</label>
-                                <input type="checkbox" name="debugMode" id="debugMode" className="toggleCheckbox" onChange={() => setDebugMode(!debugMode)} checked={debugMode} />
-                                <label className="text-sm" htmlFor="debugMode">On</label>
-                            </div>
-                        </div>
+                        <StyledToggleInput imgSrc={SvgLibrary.bug} imgAlt='🐞' labelText='Debug mode' inputName='debugMode' setFormValue={setDebugMode} formValue={debugMode} />
                         <StyledNumberInput imgSrc={SvgLibrary.temperature} imgAlt="🌡" label="OneWire IoPin" inputName="oneWireIoPin" setFormValue={setOneWireIoPin} defaultNumericValue={oneWireIoPin} min={0} max={39} step="1.0" />
                         <StyledNumberInput imgSrc={SvgLibrary.propeller} imgAlt="❊" label="Relay #1 IoPin" inputName="relayIoPin1" setFormValue={setRelayIoPin1} defaultNumericValue={relayIoPin1} min={0} max={39} step="1.0" />
                         <StyledNumberInput imgSrc={SvgLibrary.propeller} imgAlt="❊" label="Relay #2 IoPin" inputName="relayIoPin2" setFormValue={setRelayIoPin2} defaultNumericValue={relayIoPin2} min={0} max={39} step="1.0" />
