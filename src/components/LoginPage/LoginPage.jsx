@@ -14,10 +14,12 @@ import DarkModeToggle from '../../components/Layout/Header/DarkModeToggle'
 import SvgLibrary from '../../common/SvgLibrary';
 import ModalContext from '../Layout/Modal/ModalContext';
 import Modal from './../Layout/Modal/Modal'
+import useTitle from '../../common/useTitle';
 
 function LoginPage() {
 
     useDarkMode("login-body");
+    useTitle('TTC | Login');
 
     const navigate = useNavigate();
     const modal = useContext(ModalContext);

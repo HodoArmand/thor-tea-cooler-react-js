@@ -8,10 +8,12 @@ import useAppGuard from "../../common/useAppGuard"
 import ApiContext from "../../common/ApiContext";
 import AuthContext from "../../common/AuthContext";
 import ModalContext from "../Layout/Modal/ModalContext";
+import useTitle from '../../common/useTitle'
 
 function UserConfigurationPage() {
 
     useDarkMode("config-body");
+    useTitle('TTC | 👤 Configuration');
     useAppGuard();
 
     const api = useContext(ApiContext);

@@ -10,12 +10,12 @@ import ModalContext from "../Layout/Modal/ModalContext";
 import StyledNumberInput from "../Layout/StyledNumberInput";
 import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContainerLoader";
 import StyledToggleInput from "../Layout/StyledToggleInput";
-
-// TODO: add page title changes
+import useTitle from '../../common/useTitle'
 
 function ServerConfigurationPage() {
 
     useDarkMode("config-body");
+    useTitle('TTC | ☁ Configuration');
     useAppGuard();
 
     const api = useContext(ApiContext);

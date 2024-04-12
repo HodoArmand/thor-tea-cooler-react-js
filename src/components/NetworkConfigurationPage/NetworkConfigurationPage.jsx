@@ -9,11 +9,12 @@ import ApiContext from "../../common/ApiContext";
 import ConfigPageContentContainerLoader from "../Layout/ConfigPageContentContainerLoader";
 import ModalContext from "../Layout/Modal/ModalContext";
 import StyledToggleInput from "../Layout/StyledToggleInput";
-
+import useTitle from '../../common/useTitle'
 
 function ConfigurationPage() {
 
     useDarkMode("config-body");
+    useTitle('TTC | 🖧 Configuration');
     useAppGuard();
 
     const api = useContext(ApiContext);

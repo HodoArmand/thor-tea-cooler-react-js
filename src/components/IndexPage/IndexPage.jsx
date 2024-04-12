@@ -9,10 +9,12 @@ import HardwareStateContext from "./HardwareStateContext";
 import TemperaturesCard from "./TemperaturesCard";
 import OpModeCard from "./OpModeCard";
 import ManualModeCard from "./ManualModeCard";
+import useTitle from '../../common/useTitle'
 
 function IndexPage() {
 
     useDarkMode("index-body");
+    useTitle('TTC | Tea Cooler');
     useAppGuard();
 
     const hardwareState = useContext(HardwareStateContext);
