@@ -19,7 +19,7 @@ const HardwareStateProvider = props => {
         targetTemperature: [],
         labels: []
     });
-    const [chartDataChanged, setChartDataChanged] = useState();
+    const [chartDataChanged, setChartDataChanged] = useState(false);
 
     const [isApiRequesting, setIsApiRequesting] = useState(false);
 
