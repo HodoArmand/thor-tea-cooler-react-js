@@ -1,5 +1,3 @@
-//  TODO: investigate if preline is even uzsed anywhere except the removed darkmdoe switcher
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',

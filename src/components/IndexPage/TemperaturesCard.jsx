@@ -4,18 +4,18 @@ import HardwareStateContext from './HardwareStateContext';
 
 import SvgLibrary from '../../common/SvgLibrary';
 import { formatFloat } from "../../common/hardwareStateUtils";
+import TemperatureLineChart from './TemperatureLineChart';
 
 function TemperaturesCard() {
 
     const hardwareState = useContext(HardwareStateContext);
 
-    //  TTC Command parameters
     const [newTargetTemperature, setNewTargetTemperature] = useState(hardwareState.targetTemperature);
 
     return (
         <div id="temperaturesCard" className="teaControlGroupCard group">
             <div id="temperaturesCardHeader" className="flex flex-row relative h-56 w-full bg-gray-50 dark:bg-slate-950 rounded-t-xl p-2">
-                <canvas id="temperatureChart"></canvas>
+                <TemperatureLineChart chartData={hardwareState.chartData} />
             </div>
             <div id="temperaturesCardMain" className="p-4 md:p-6">
                 <h2 className="block mb-1 text-base font-semibold uppercase text-green-600 dark:text-green-500">
@@ -65,14 +65,16 @@ function TemperaturesCard() {
             </div>
             <div id="temperaturesCardFooter" className="teaControlGroupCardFooter">
                 <button id="targetTemperatureDecreaseButton" className={"card-button-left hover:bg-sky-200 dark:hover:bg-sky-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
-                    onClick={() => { hardwareState.postTargetTemperature(hardwareState.targetTemperature - 1) }}>
+                    onClick={() => { hardwareState.postTargetTemperature(hardwareState.targetTemperature - 1) }}
+                    disabled={hardwareState.targetTemperature <= 20.00}>
                     <span><img src={SvgLibrary.mug} className="injectable icon-md inline mr-1" alt="☕" />-1℃</span>
                 </button>
                 <button id="targetTemperatureDecreaseButtonLoader" className={"card-button-left cursor-progress " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                 </button>
                 <button id="targetTemperatureIncreaseButton" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting && ' !hidden')}
-                    onClick={() => { hardwareState.postTargetTemperature(hardwareState.targetTemperature + 1) }}>
+                    onClick={() => { hardwareState.postTargetTemperature(hardwareState.targetTemperature + 1) }}
+                    disabled={hardwareState.targetTemperature >= 75.00}>
                     <span><img src={SvgLibrary.mug} className="injectable icon-md inline mr-1" alt="☕" />+1℃</span>
                 </button>
                 <button id="targetTemperatureIncreaseButtonLoader" className={"card-button-left cursor-progress " + (!hardwareState.isApiRequesting && ' !hidden')} disabled>

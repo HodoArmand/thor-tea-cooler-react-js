@@ -10,6 +10,7 @@ import TemperaturesCard from "./TemperaturesCard";
 import OpModeCard from "./OpModeCard";
 import ManualModeCard from "./ManualModeCard";
 import useTitle from '../../common/useTitle'
+import ApiContext from "../../common/ApiContext";
 
 function IndexPage() {
 
@@ -18,9 +19,47 @@ function IndexPage() {
     useAppGuard();
 
     const hardwareState = useContext(HardwareStateContext);
+    const api = useContext(ApiContext);
 
     useEffect(() => {
         hardwareState.get();
+        const sse = new EventSource('//' + api.ttcIp + '/events');
+
+        sse.onopen = () => {
+            console.log("Connected to SSE channel.");
+        };
+        sse.onmessage = (event) => {
+            console.log(event);
+        };
+        sse.addEventListener('ping', e => {
+            console.log(e);
+        });
+        sse.addEventListener('teaState', event => {
+            const newHardwareState = JSON.parse(event.data);
+            console.log("Tea state received trough SSE: " + event.data);
+            hardwareState.setRelay1(newHardwareState.relay1);
+            hardwareState.setRelay2(newHardwareState.relay2);
+            hardwareState.setTemperature(newHardwareState.temperature);
+            hardwareState.setTargetTemperature(newHardwareState.targetTemperature);
+            hardwareState.setMode(newHardwareState.mode);
+            hardwareState.addDataToTemperatureChart(newHardwareState.temperature, newHardwareState.targetTemperature);
+        });
+        sse.onerror = (error) => {
+            if (error.target.readyState !== EventSource.OPEN) {
+                console.log("SSE channel disconnected.");
+            }
+            else {
+                console.error('EventSource failed:', error);
+            }
+        };
+
+        function closeSse() {
+            console.log('SSE connection temrinated.')
+            sse.close();
+        }
+
+        return () => closeSse();
+
     }, []);
 
     return (

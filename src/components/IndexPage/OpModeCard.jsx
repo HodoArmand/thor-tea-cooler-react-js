@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 import HardwareStateContext from './HardwareStateContext';
 
@@ -7,11 +7,6 @@ import SvgLibrary from '../../common/SvgLibrary';
 function OpModeCard() {
 
     const hardwareState = useContext(HardwareStateContext);
-
-    //  TODO: after SSE connector added, test if this comp rerenders just by getting an updated context value and if so, the useffect is unneccesary.
-    useEffect(() => {
-
-    }, [hardwareState.mode]);
 
     const opModesCardMainText = {
         unset: {
@@ -92,14 +87,16 @@ function OpModeCard() {
             </div>
             <div id="opModesCardFooter" className="flex-none teaControlGroupCardFooter">
                 <button id="modeButtonAuto" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
-                    onClick={() => hardwareState.postMode('setModeAuto')}>
+                    onClick={() => hardwareState.postMode('setModeAuto')}
+                    disabled={hardwareState.mode === 'autoReady' || hardwareState.mode === 'autoCooling'}>
                     <span><img src={SvgLibrary.modes.autoReady} className="injectable icon-md inline mr-1" alt="⚙" />Automatic</span>
                 </button>
                 <button id="modeButtonAutoLoader" className={"card-button-left hover:bg-green-200 dark:hover:bg-green-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>
                     <img src={SvgLibrary.loader} className="injectable icon-loader" alt="loading..." />
                 </button>
                 <button id="modeButtonManual" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 disabled:control-disabled " + (hardwareState.isApiRequesting ? ' !hidden' : '')}
-                    onClick={() => hardwareState.postMode('setModeManual')}>
+                    onClick={() => hardwareState.postMode('setModeManual')}
+                    disabled={hardwareState.mode === 'manual'}>
                     <span><img src={SvgLibrary.modes.manual} className="injectable icon-md inline mr-1" alt="⚙" />Manual</span>
                 </button>
                 <button id="modeButtonManualLoader" className={"card-button-right hover:bg-rose-200 dark:hover:bg-rose-500/75 " + (!hardwareState.isApiRequesting ? ' !hidden' : '')} disabled>

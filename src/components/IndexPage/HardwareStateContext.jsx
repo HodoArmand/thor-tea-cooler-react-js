@@ -14,6 +14,12 @@ const HardwareStateProvider = props => {
     const [temperature, setTemperature] = useState(20);
     const [targetTemperature, setTargetTemperature] = useState(50);
     const [mode, setMode] = useState('unset');
+    const [chartData, setChartData] = useState({
+        temperature: [],
+        targetTemperature: [],
+        labels: []
+    });
+    const [chartDataChanged, setChartDataChanged] = useState();
 
     const [isApiRequesting, setIsApiRequesting] = useState(false);
 
@@ -45,16 +51,18 @@ const HardwareStateProvider = props => {
             });
     }
 
-    const setFromSse = (sseMsg) => {
-        console.log(sseMsg);
-    }
-
-    const connectSse = () => {
-        console.log('SSE connected');
-    }
-
-    const disconnectSse = () => {
-        console.log('SSE discconnected');
+    const addDataToTemperatureChart = (temperature_, targetTemperature_) => {
+        let dataSet = chartData;
+        if (dataSet.temperature.length >= 15) {
+            dataSet.labels.splice(0, 1);
+            dataSet.temperature.splice(0, 1);
+            dataSet.targetTemperature.splice(0, 1);
+        }
+        dataSet.labels.push(new Date().toTimeString().substring(0, 8));
+        dataSet.temperature.push(temperature_);
+        dataSet.targetTemperature.push(targetTemperature_);
+        setChartData(dataSet);
+        setChartDataChanged(b => !b);
     }
 
     const postTargetTemperature = (celsius) => {
@@ -137,11 +145,11 @@ const HardwareStateProvider = props => {
     const hardwareState = {
         get,
         isApiRequesting, setIsApiRequesting,
-        setFromSse,
-        connectSse,
-        disconnectSse,
+        addDataToTemperatureChart,
         postTargetTemperature,
         postMode,
+        chartData,
+        setChartData,
         switchRelay,
         relay1, setRelay1,
         relay2, setRelay2,

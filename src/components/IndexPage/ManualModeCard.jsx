@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 import HardwareStateContext from './HardwareStateContext';
 
@@ -7,11 +7,6 @@ import SvgLibrary from '../../common/SvgLibrary';
 function ManualModeCard() {
 
     const hardwareState = useContext(HardwareStateContext);
-
-    //  TODO: after SSE connector added, test if this comp rerenders just by getting an updated context value and if so, the useffect is unneccesary.
-    useEffect(() => {
-
-    }, [hardwareState.mode, hardwareState.relay1, hardwareState.relay2]);
 
     return (
         <div id="manualModeCard" className="teaControlGroupCard group">

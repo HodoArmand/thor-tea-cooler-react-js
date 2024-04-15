@@ -280,6 +280,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-moz-range-thumb {
 	-webkit-appearance: none;
+	appearance: none;
 	@apply appearance-none w-14 h-9;
 	@apply bg-white dark:bg-gray-800;
 	@apply rounded-lg border-2 border-solid border-gray-700/30 dark:border-gray-700;
