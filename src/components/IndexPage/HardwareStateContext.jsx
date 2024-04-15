@@ -19,6 +19,7 @@ const HardwareStateProvider = props => {
         targetTemperature: [],
         labels: []
     });
+    // eslint-disable-next-line no-unused-vars
     const [chartDataChanged, setChartDataChanged] = useState(false);
 
     const [isApiRequesting, setIsApiRequesting] = useState(false);
