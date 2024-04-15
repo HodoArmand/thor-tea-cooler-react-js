@@ -271,6 +271,10 @@ body {
 	@apply rounded-lg;
 }
 
+input[type="range"]::-moz-range-progress {
+	background: #3f83f800;
+}
+
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	@apply appearance-none w-14 h-9;
