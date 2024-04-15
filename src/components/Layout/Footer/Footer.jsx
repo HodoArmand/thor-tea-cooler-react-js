@@ -10,7 +10,7 @@ function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center">
                     <div className="flex flex-row space-x-2 items-center">
                         <img src={SvgLibrary.TtcLogoFillcolor} className="injectable w-9 h-9" alt="TTC" />
-                        <p className="flex-none text-xl font-semibold">Thor Tea Cooler v1.0.1(rj)</p>
+                        <p className="flex-none text-xl font-semibold">Thor Tea Cooler v1.0.0(rj)</p>
                     </div>
 
                     <ul className="text-center">
